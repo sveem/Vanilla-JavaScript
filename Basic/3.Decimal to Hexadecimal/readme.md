@@ -3,4 +3,4 @@ Write a JavaScript code in a Web page dec2hex.html that enters a positive intege
 shown as browser popup window (alert). 
 Examples:
 
-# ![Examples](examples.png)
+# ![Examples](example.png)

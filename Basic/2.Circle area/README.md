@@ -4,4 +4,4 @@ returns its area. Put the function in a file named circle-area.js. Write a HTML 
 script circle-area.js and calculates and prints in the page body the area of circles of size r=7, r=1.5 and r=20.
 Examples:
 
-# ![Examples](example.png)
+# ![Examples](examples.png)
