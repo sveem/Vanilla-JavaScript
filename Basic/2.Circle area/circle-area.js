@@ -7,6 +7,11 @@
 const calcCircleArea = (r) => {
   let pi = 3.14159265359, area;
   area = pi * Math.pow(r, 2);
-  console.log(area);
-  return area;
+  return document.write(`r = ${r}; area = ${area}<br><br>`);
 };
+
+window.onload = calcCircleArea(7);
+window.onload = calcCircleArea(1.5);
+window.onload = calcCircleArea(2);
+
+
