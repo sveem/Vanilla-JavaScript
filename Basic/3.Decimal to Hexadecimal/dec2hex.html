@@ -1,6 +1,8 @@
-<!-- Write a JavaScript code in a Web page dec2hex.html that enters a positive integer number num and converts it to a hexadecimal form. The input should be entered as JavaScript prompt window. The output should be shown as browser popup window (alert).
+<!-- 
+Write a JavaScript code in a Web page dec2hex.html that enters a positive integer number "num"
+and converts it to a hexadecimal form. The input should be entered as JavaScript prompt window.
+The output should be shown as browser popup window (alert).
  -->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,10 +13,10 @@
 </head>
 <body onload="dec2hex()">
   <script type="text/javascript">
-  const dec2hex = () => {
-    let num = Number(prompt("Enter a number"));
-    return alert(num.toString(16).toUpperCase());
-  };
+    const dec2hex = () => {
+      let num = Number(prompt("Enter a number"));
+      return alert(num.toString(16).toUpperCase());
+    };
   </script>
 </body>
 </html>
