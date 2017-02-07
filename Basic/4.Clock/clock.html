@@ -11,7 +11,14 @@
     <p id="clock"></p>	
   </div>	
   <script>
-  	
+    const getTime = () => {
+      let getDate = new Date();
+      let hours = getDate.getHours();
+      let minutes = getDate.getMinutes();
+      let seconds = getDate.getSeconds();
+      console.log(`${hours}:${minutes}:${seconds}`);
+    };
+    setInterval(() => { getTime(); }, 1000);
   </script>
 </body>
 </html>
