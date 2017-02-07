@@ -1,3 +1,7 @@
+<!-- Write a JavaScript function in a Web page clock.html that shows the current time in format hh:mm:ss. 
+The time should update itself so that it works as a clock.
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <html>
@@ -11,11 +15,17 @@
     <p id="clock"></p>	
   </div>	
   <script>
+    const zero = (zero) => {
+      if (zero < 10) {
+        zero = "0" + zero;
+      }
+      return zero;
+    };
     const getTime = () => {
       let getDate = new Date();
-      let hours = getDate.getHours();
-      let minutes = getDate.getMinutes();
-      let seconds = getDate.getSeconds();
+      let hours = zero(getDate.getHours());
+      let minutes = zero(getDate.getMinutes());
+      let seconds = zero(getDate.getSeconds());
       let time = document.getElementById("clock");
       time.innerHTML = `${hours}:${minutes}:${seconds}`;
     };
