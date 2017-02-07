@@ -16,7 +16,8 @@
       let hours = getDate.getHours();
       let minutes = getDate.getMinutes();
       let seconds = getDate.getSeconds();
-      console.log(`${hours}:${minutes}:${seconds}`);
+      let time = document.getElementById("clock");
+      time.innerHTML = `${hours}:${minutes}:${seconds}`;
     };
     setInterval(() => { getTime(); }, 1000);
   </script>
