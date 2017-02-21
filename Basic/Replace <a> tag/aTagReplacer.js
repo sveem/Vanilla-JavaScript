@@ -7,7 +7,7 @@
 let input = "<ul> \n <li>\n  <a href=http://softuni.bg>SoftUni</a>\n </li>\n</ul>";
 
 const replaceATag = (str) => {
-  let aTagStart = str.replace("<a", "[URL");
+  let aTagStart = str.replace("<a", "[URL" );
   let aTagEnd = aTagStart.replace("</a>", "[/URL]");
   let index = aTagEnd.search(/>\S/);
   let result = aTagEnd.replace(aTagEnd[index], "]");
