@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="UTF-8">
+	<title>Calculate Expression</title>
+	<style>
+  	input, p {background-color: blue; color: orange; width: 200px}
+    button {background-color: white; border: 1px solid; margin: 5px 66px}
+    p {font-size: 1.2em}
+  </style>
 </head>
 <body>
-  <div>
   <input type="text" id="input"></input>
-  </div>
-  <button onclick="getInput()">Eval</button>	
-  <p id="output">Ouput form</p>	
+  </br>
+  <button type="button" onclick="getInput()">Eval result</button>	
+  <p id="output"></p>	
   <script src="calcExpression.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
