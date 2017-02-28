@@ -50,7 +50,7 @@ const revealTriangles = (input) => {
     }
   }
  
-  for (var row = 0; row < input.length; row++) {
+  for (let row = 0; row < input.length; row++) {
     console.log(result[row].join(''));
   }
 };
