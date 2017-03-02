@@ -6,6 +6,16 @@
  * You may need to find how to use constructors.
 */
 
+class Person {
+  constructor(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.toString = () => {
+      return this.firstName + ' ' + this.lastName + ' ' + 'age(' + this.age + ')';
+    };
+  }
+}
 
 let people = [
   new Person('Scott', 'Guthrie', 38),
@@ -15,8 +25,18 @@ let people = [
   new Person('Jon', 'Skeet', 38)
 ];
 
-const groupBy = (input) => {
-
+const groupBy = (criteria) => {
+  let result = [];
+  for (let key in people) {
+    if (!result.hasOwnProperty('Group ' + people[key][criteria])) {
+      result['Group ' + people[key][criteria]] = [];
+    }
+    result['Group ' + people[key][criteria]].push(people[key].toString());
+  }  
+  for (let key in result) {
+    console.log(key + ' : [' + result[key].join(', ') + ']');
+  }
 };
 
-groupBy('criteria');
+groupBy('firstName');
+groupBy('lastName');
