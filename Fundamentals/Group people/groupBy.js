@@ -4,7 +4,7 @@
  * with keys – the groups (age, firstName and lastName) and values – arrays with people in this group. Print on the
  * console every entry of the returned object. Use function overloading (i.e. just one function).
  * You may need to find how to use constructors.
-*/
+ */
 
 class Person {
   constructor(firstName, lastName, age) {
