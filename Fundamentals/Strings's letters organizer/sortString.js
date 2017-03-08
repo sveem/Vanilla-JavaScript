@@ -9,8 +9,20 @@
  let input = 'HelloWorld';
 
  const sortLetters = (string, boolean) => {
+   let stringToArray = string.split('');
+   let result;
 
+   if (boolean) {
+     result = stringToArray.sort((a, b) => a.toLowerCase() > b.toLowerCase());
+   } else {
+     result = stringToArray.sort((a, b) => a.toLowerCase() < b.toLowerCase());	
+   }
+
+   return result.join('');
  };
 
+
+ console.log(sortLetters(input, true));
+ console.log(sortLetters(input, false));
 
  
