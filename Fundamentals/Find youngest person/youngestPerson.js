@@ -12,5 +12,15 @@
  ];
 
  const findYoungestPerson = (array) => {
+   let result = {age: Number.MAX_VALUE};
 
+   array.forEach((person) => {
+     if (person.hasSmartphone && person.age < result.age) {
+       result = person;
+     }
+   });
+
+   return `The youngest person is ${result.firstname} ${result.lastname}`; 
  };
+
+ console.log(findYoungestPerson(people));
