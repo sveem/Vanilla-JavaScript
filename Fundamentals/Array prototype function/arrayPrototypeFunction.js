@@ -8,8 +8,15 @@
  let arr1 = [ 1, 2, 1, 4, 1, 3, 4, 1, 111, 3, 2, 1, '1'];
  let arr2 = ['hi', 'bye', 'hello'];
 
- 
-
+ Array.prototype.removeItem = function removeItem (input) {
+   let newArray = this;
+   for (let i = 0; i < newArray.length; i++) {
+     if (input === newArray[i]) {
+       newArray.splice(newArray.indexOf(newArray[i]), 1);
+     }
+   }
+   return newArray;
+ };
 
  console.log(arr1.removeItem(1));
  //OUTPUT: [2, 4, 3, 4, 111, 3, 2, '1']
