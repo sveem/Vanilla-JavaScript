@@ -6,10 +6,21 @@
  */
 
 const clone = (obj) => {
-  
+  let stringified = JSON.stringify(obj);
+  let copy = JSON.parse(stringified);
+  return copy;
 };
 
 const compareObjects = (obj, objCopy) => {
-
+  let compare = (obj === objCopy);
+  return `a === b --> ${compare}`;
 };
+
+let a = {name: 'Pesho', age: 21};
+let b = clone(a); //a deep copy
+console.log(compareObjects(a, b));
+//-------------------------------->
+a = {name: 'Pesho', age: 21};
+b = a; //not a deep copy
+console.log(compareObjects(a, b));
 
