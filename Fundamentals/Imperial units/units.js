@@ -7,4 +7,15 @@
  * The output should be printed to the console.
  */
 
+const imperialUnits = (value) => {
+  
+  let unit = Number(value);
+  let foot = Math.floor(unit / 12);
+  let inches = unit % 12;
 
+  return `${foot}'-${inches}'`;
+};
+
+console.log(imperialUnits([36]));
+console.log(imperialUnits([55]));
+console.log(imperialUnits([11]));
