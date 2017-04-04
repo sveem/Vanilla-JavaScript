@@ -8,5 +8,8 @@
  let input2 = ['11110000'];
 
  const binaryConvertor = (array) => {
-
+   return parseInt(array, 2);
  };
+
+ console.log(binaryConvertor(input1));
+ console.log(binaryConvertor(input2));
