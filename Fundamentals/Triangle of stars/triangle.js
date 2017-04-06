@@ -9,6 +9,25 @@
  let data2 = ['2'];
  let data3 = ['5'];
 
- const triangle = (input) => {
+ const triangleOfStars = (input) => {
+   let number = Number(input[0]);
+   let triangle = '', row, col;
 
+   for (row = 0; row < number; row++) {
+     triangle += '*';
+     for (col = 0; col < row; col++) {
+       triangle += '*';
+     }
+     triangle += '\n';
+   }
+
+   for (row = 0; row < number; row++) {
+     for (col = 0; col < number - row - 1; col++) {
+       triangle += '*';
+     }
+     triangle += '\n';
+   }
+   console.log(triangle);
  };
+
+ triangleOfStars(data3);
