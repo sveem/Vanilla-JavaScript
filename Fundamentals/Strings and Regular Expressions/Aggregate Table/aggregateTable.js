@@ -6,3 +6,30 @@
  * The output is printed on the console on two lines. On the first line, print a comma-separated list of all towns and on
  * the second, the sum of all incomes.
  */
+
+let input = 
+  [ 
+    '| Sofia           | 300',
+    '| Veliko Tarnovo  | 500',
+    '| Yambol          | 275'
+  ];
+
+const aggregateTable = (array) => {
+
+  let cities = [];
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    
+    let char = array[i].split('|');
+    let city = char[1].toString().trim();
+    cities.push(city);
+    
+    let amount = char[2].toString().replace(/ /g, '');
+    sum += Number(amount);
+  }
+  console.log(cities.join(', '));
+  console.log(sum);
+};
+
+aggregateTable(input);
