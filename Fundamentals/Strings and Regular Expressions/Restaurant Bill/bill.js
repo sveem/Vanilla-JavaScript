@@ -9,3 +9,21 @@
 
  let input1 = ['Beer Zagorka', '2.65', 'Tripe soup', '7.80', 'Lasagna', '5.69'];
  let input2 = ['Cola', '1.35', 'Pancakes', '2.88'];
+
+ const bill = input => {
+ 
+   let goods = [];
+   let sum = 0;
+
+   input.forEach((el, index) => {
+     index % 2 === 0 
+     ? goods.push(el)
+     : sum += Number(el);
+   });
+
+   return `You purchased ${goods.join(', ')} for a total sum of ${sum}`;
+
+ };
+
+ console.log(bill(input1));
+ console.log(bill(input2));
