@@ -8,3 +8,20 @@
 
 let input = ['peshoo@gmail.com', 'todor_43@mail.dir.bg', 'foo@bar.com'];
 
+const usernames = (inputs) => {
+  let users = [];
+
+  for (let email of inputs) {
+ 
+    let emails = email.split('@');
+    let username = emails[0] + '.';
+  
+    emails[1].split('.').map(value => username += value[0]);
+    users.push(username);
+  }
+
+  return users.join(', ');
+ 
+};
+console.log(usernames(input));
+
