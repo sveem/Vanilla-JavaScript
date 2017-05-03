@@ -8,3 +8,27 @@
  * The input comes as array of string elements.
  * The output is the return value of your function. Compose the list in a string and return it. 
  */
+ 
+let html = ['<b>unescaped text</b>', 'normal text'];
+
+const text = (input) => {
+
+  let result = '<ul>\n';
+
+  for (let i = 0; i < input.length; i++) {
+    let escaped = input[i];
+
+    escaped = escaped.split('&').join('&amp;');
+    escaped = escaped.split('<').join('&lt;');
+    escaped = escaped.split('>').join('&gt;');
+    escaped = escaped.split('"').join('&quot;');
+
+    result += '  \<li>' + escaped + '</li>\n';
+
+  }
+  result += '</ul>';
+
+  console.log(result);
+
+};
+text(html);
