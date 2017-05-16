@@ -8,4 +8,29 @@
  * The output is the array itself, with each element printed on a new line. In case of an empty array, just print “Empty”.
  */
 
- 
+ let array = ['add', 'add', 'remove', 'add', 'add'];
+
+ const addRemove = input => {
+   let result = [];
+
+   for (let i = 0; i < input.length; i++) {
+     if (input[i] === 'add') {
+       result.push(i + 1);
+     }
+     if (input[i] === 'remove') {
+       result.pop();
+     }
+   }
+
+   if (result.length === 0) {
+     console.log('Empty');
+   } else {
+     for (let j = 0; j < result.length; j++) {
+       console.log(result[j]);
+     } 	
+   }
+ };
+
+ addRemove(array);
+
+ //Output: 1, 4, 5
