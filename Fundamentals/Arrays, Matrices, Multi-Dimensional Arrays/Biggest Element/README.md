@@ -6,14 +6,3 @@ The output is the return value of your function. Find the biggest element and re
 Example:
 
 # ![Examples](example.png)
-
-
-
-
-
-
-
-
-
-
-
