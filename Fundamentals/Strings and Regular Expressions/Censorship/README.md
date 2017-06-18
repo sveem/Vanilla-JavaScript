@@ -9,18 +9,3 @@ The output is the return value of your functions. Save the censored results in a
 Example:
 
 # ![Examples](example.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
