@@ -7,3 +7,27 @@
  * the table.
  * The output should be printed on the console - for each entry row in the input print the object representing it.
  */
+
+ let data = [
+   '| Town | Latitude | Longitude |',
+   '| Sofia | 42.696552 | 23.32601 |',
+   '| Beijing | 39.913818 | 116.363625 |'
+ ];
+
+ const townsToJSON = towns => {
+   let result = [];
+
+   for (let town of towns.slice(1)) {
+     let [empty, townName, lat, lng] = town.split(/\s*\|\s*/);
+
+     let townObj = { 
+       Town: townName, 
+       Latitude: Number(lat), 
+       Longitude: Number(lng) 
+     };
+     result.push(townObj);
+   }
+   return JSON.stringify(result);
+ };
+
+ console.log(townsToJSON(data));
