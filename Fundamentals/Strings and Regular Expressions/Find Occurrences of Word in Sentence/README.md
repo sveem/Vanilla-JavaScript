@@ -6,4 +6,4 @@ The first one will be the sentence, and the second one – the word.
 The output is a single number indicating the amount of times the sentence contains the word.
 Example:
 
-# ![Examples](example.png)
+# ![Examples](example.png)Towns to JSON
