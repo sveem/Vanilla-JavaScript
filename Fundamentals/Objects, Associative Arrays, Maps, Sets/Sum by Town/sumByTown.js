@@ -9,4 +9,24 @@
  * incomes.
  */
 
-let input = ['Sofia', '20', 'Varna', '3', 'Sofia', '5', 'Varna', '4'];
+let data = ['Sofia', '20', 'Varna', '3', 'Sofia', '5', 'Varna', '4'];
+
+const sumByTown = (input) => {
+
+  let result = {};
+
+  for (let i = 0; i < input.length; i + 2) {
+    let town = input[i];
+    let sum = Number(input[i + 1]);
+
+    if (result[town] === undefined) {
+      result[town] = sum;
+    } else {
+      result[town] += sum;
+    }
+  }
+  return JSON.stringify(result);
+};
+
+console.log(sumByTown(data));
+//Output: {"Sofia": 25, "Varna": 7}
