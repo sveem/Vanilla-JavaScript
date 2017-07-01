@@ -6,3 +6,32 @@
  * consist of more than one sentence.
  * The output should be printed on the console - the JSON representation of the object containing the words.
  */
+
+ let input = [`Far too slow, you're far too slow.`];
+ let input2 = [`JS devs use Node.js for server-side JS.-- JS for devs`]; 
+
+
+ const countWords = inputLines => {
+
+   let wordsCount = {};
+   let text = inputLines.join('\n');
+   let words = text
+     .split(/[^A-Za-z0-9_]+/)
+     .filter(word => word !== '');
+
+   for (let word of words) {
+
+     if (wordsCount[word]) {
+       wordsCount[word]++;
+     } else {
+       wordsCount[word] = 1;
+     }
+   }
+   return JSON.stringify(wordsCount);
+ };
+
+ console.log(countWords(input));
+// Output: {"Far":1,"too":2,"slow":2,"you":1,"re":1,"far":1}
+
+ console.log(countWords(input2));
+ //Output: {"JS":3,"devs":2,"use":1,"Node":1,"js":1,"for":2,"server":1,"side":1}
