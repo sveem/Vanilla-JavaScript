@@ -11,5 +11,34 @@
  * the heroes. Check the examples for more info.
  */
 
- let input = ['Jake / 1000 / Gauss, HolidayGrenade'];
- let input1 = ['Isacc / 25 / Apple, GravityGun', 'Derek / 12 / BarrelVest, DestructionSword', 'Hes / 1 / Desolator, Sentinel, Antara'];
+ let data = ['Jake / 1000 / Gauss, HolidayGrenade'];
+ let data1 = ['Isacc / 25 / Apple, GravityGun', 'Derek / 12 / BarrelVest, DestructionSword', 'Hes / 1 / Desolator, Sentinel, Antara'];
+
+ const main = input => {
+   let heroData = [];
+
+   for (let i = 0; i < input.length; i++) {
+     let currentHeroArguments = input[i].split(' / ');
+
+     let currentHeroName = currentHeroArguments[0];
+     let currentHeroLevel = Number(currentHeroArguments[1]);
+     let currentHeroItems = [];
+
+     if (input.length > 0) {
+       currentHeroItems = currentHeroArguments[2].split(', ');
+     }
+
+     let hero = {
+       name: currentHeroName,
+       level: currentHeroLevel,
+       items: currentHeroItems
+     };
+
+     heroData.push(hero);
+   }
+
+   return JSON.stringify(heroData);
+ };
+
+ console.log(main(data));
+ console.log(main(data1));
