@@ -12,6 +12,27 @@
  */
 
  let data = [
-   '{"name":"Pesho","position":"Promenliva","salary":100000}', 
+   '{"name":"Pesho","position":"Investor","salary":100000}', 
    '{"name":"Teo","position":"Lecturer","salary":1000}', 
    '{"name":"Georgi","position":"Lecturer","salary":1000}'];
+
+ const jsonToTable = input => {
+    
+   let table = '<table>\n';
+   let newInput = input.map(el => JSON.parse(el));
+    
+   for (let obj of newInput) {
+     let name = obj.name;
+     let position = obj.position;
+     let salary = obj.salary;
+      
+     table += '  <tr>\n';
+     table += `    <td>${name}<td>\n`;
+     table += `    <td>${position}<td>\n`;
+     table += `    <td>${salary}<td>\n`;
+     table += '  <tr>\n';
+   }
+   return table += '</table>';
+ };
+  
+ console.log(jsonToTable(data));
