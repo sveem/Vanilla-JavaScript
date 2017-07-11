@@ -17,3 +17,44 @@
  * line, at which point we have already create Pear and Watermelon juice bottles, thus the Kiwi bottles appear last in
  * the output.
  */
+
+let data = ['Orange => 2000', 'Peach => 1432', 'Banana => 450', 'Peach => 600'];
+
+const cappyJuice = input => {
+
+  let allJuice = new Map ();
+  let allBottles = new Map ();
+
+  for (let i = 0; i < input.length; i++) {
+
+    let current = input[i].split('=>');
+    let fruit = current[0];
+    let quantity = Number(current[1]);
+
+    if (!allJuice.has(fruit)) {
+      allJuice.set(fruit, 0);
+    }
+    
+    let cuurentQuantity = allJuice.get(fruit);
+    cuurentQuantity += quantity;
+
+    if (cuurentQuantity >= 1000) {
+      let juiceLeft = cuurentQuantity % 1000;
+      let bottlesToStore = (cuurentQuantity - juiceLeft) / 1000;
+
+      if (!allBottles.has(fruit)) {
+        allBottles.set(fruit, 0);
+      }
+        
+      allBottles.set(fruit, allBottles.get(fruit) + bottlesToStore);
+      quantity = juiceLeft;
+    }
+    allJuice.set(fruit, allJuice.get(fruit) + quantity);
+  }
+  
+  for (let [juicee, bottles] of allBottles) {
+    console.log(juicee + ' => ' + bottles);
+  }
+};
+
+console.log(cappyJuice(data));
